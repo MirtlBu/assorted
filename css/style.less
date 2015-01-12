@@ -1,0 +1,432 @@
+@color-bluegray-medium: #96a4b0;
+@color-bluegray-saturated: #3c5081;
+@color-bluegray-light: #edf0f2;
+@color-gray-medium: #565656;
+@color-white: #ffffff;
+@color-yellow: #ffce00;
+@width-grid: 980px;
+
+@font-face {
+    font-family: 'RobotoThin';
+    src: url(../fonts/Roboto-Thin.ttf);
+}
+@font-face {
+    font-family: 'RobotoLight';
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: 'RobotoBold';
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: 'RobotoSlabBold';
+    src: url(../fonts/RobotoSlab-Bold.ttf);
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+button, input {
+    outline: none;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    border: none;
+    background: transparent;
+}
+
+ul, li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+::-webkit-input-placeholder, ::-moz-placeholder, :-ms-input-placeholder {
+    color: rgba(44, 62, 80, 0.1);
+}
+
+.clear {
+    clear: both;
+}
+
+.grid {
+    width: @width-grid;
+    margin: auto;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+
+    .grid {
+        display: table;
+        height: 100%;
+    }
+
+    .logo, .city, .delivery, .faq, .phone {
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .logo {
+        width: @width-grid/5.4;
+        text-align: right;
+
+        span:first-child {
+            font-size: 24px;
+            font-family: RobotoSlabBold;
+            color: @color-bluegray-medium;
+            text-transform: uppercase;
+            display: block;
+        }
+
+        span:last-child {
+            font-size: 12px;
+            font-family: RobotoThin;
+            color: @color-gray-medium;
+            text-transform: lowercase;
+            display: block;
+        }
+    }
+
+    .city {
+        cursor: pointer;
+        width: 290px;
+        text-align: right;
+
+        span:first-child {
+            width: 0;
+            height: 0;
+            border-top: 4px solid #c8c8c8;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            position: relative;
+            top: 12px;
+            left: 0;
+            margin-right: 5px;
+        }
+
+        span:last-child {
+            font-size: 14px;
+            font-family: RobotoLight;
+            color: @color-bluegray-saturated;
+            border-bottom: 1px dotted @color-bluegray-saturated;
+        }
+    }
+
+    .delivery {
+        cursor: pointer;
+        width: 185px;
+        text-align: right;
+
+        img {
+            vertical-align: middle;
+        }
+
+        span:last-child {
+            font-size: 14px;
+            font-family: RobotoThin;
+            color: #aaaaaa;
+            border-bottom: 1px dotted #aaaaaa;
+            vertical-align: middle;
+        }
+    }
+
+    .faq {
+        cursor: pointer;
+        width: 100px;
+        text-align: right;
+
+        img {
+            vertical-align: middle;
+        }
+
+        span:last-child {
+            font-size: 14px;
+            font-family: RobotoThin;
+            color: #aaaaaa;
+            border-bottom: 1px dotted #aaaaaa;
+            vertical-align: middle;
+        }
+    }
+
+    .phone {
+        cursor: pointer;
+        width: 235px;
+        text-align: right;
+
+        img {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        span:first-of-type {
+            font-size: 20px;
+            font-family: RobotoBold;
+            color: @color-gray-medium;
+            vertical-align: middle;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        span:last-of-type {
+            font-size: 12px;
+            font-family: RobotoThin;
+            color: @color-bluegray-medium;
+            display: block;
+        }
+    }
+}
+
+.navigation {
+    width: 100%;
+
+    .nav {
+        background: @color-bluegray-medium;
+        height: 35px;
+        padding: 5px 10px;
+
+        ul {
+            height: 100%;
+        }
+
+        li {
+            float: left;
+            position: relative;
+            top: 50%;
+            transform: translateY(-45%);
+            cursor: pointer;
+        }
+
+        li:nth-child(3), li:nth-child(4), li:nth-child(5) {
+            float: right;
+            margin-left: 12px;
+        }
+
+        .breadcrumbs {
+            font-size: 15px;
+            font-family: RobotoBold;
+            color: @color-white;
+            border-bottom: 1px dotted @color-white;
+            -webkit-font-smoothing: antialiased;
+            margin-left: 10px;
+            position: relative;
+            top: -5px;
+        }
+    }
+
+    .categories {
+
+        background: @color-bluegray-light;
+        padding: 5px 10px;
+
+        .slider {
+            display: table;
+            height: 95px;
+        }
+
+        .arrows, .frame {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        .frame {
+            text-align: center;
+
+            span {
+                font-size: 11px;
+                font-family: RobotoBold;
+                color: #c1c9d0;
+                -webkit-font-smoothing: antialiased;
+                display: block;
+            }
+        }
+
+        .slide {
+            width: 95px;
+            display: inline-block;
+
+            &:not(:last-child) {
+                margin-right: 6px;
+            }
+        }
+    }
+}
+
+.ad {
+    width: 100%;
+    padding: 10px 0;
+
+    .features {
+        width: @width-grid/3.1;
+        margin-right: @width-grid - (@width-grid/3.05 + @width-grid/1.6);
+        display: inline-block;
+        vertical-align: bottom;
+
+        h2 {
+            margin: 0;
+            font-size: 30px;
+            font-family: RobotoSlabBold;
+            color: #646464;
+            text-transform: uppercase;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 70%;
+                height: 1px;
+                background: @color-yellow;
+            }
+        }
+
+        ul {
+            margin-top: 15px;
+        }
+
+        li {
+            font-size: 14px;
+            font-family: RobotoLight;
+            color: #646464;
+            margin-bottom: 10px;
+
+            img {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .subscribe {
+
+        .discount {
+            background: @color-yellow;
+            padding: 5px 45px;
+            margin-top: 15px;
+
+            span {
+                color: #646464;
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+
+            span:nth-child(1) {
+                font-size: 14px;
+                font-family: RobotoLight;
+                display: block;
+                text-align: center;
+            }
+
+            span:nth-child(2) {
+                font-size: 14px;
+                font-family: RobotoSlabBold;
+                -webkit-font-smoothing: antialiased;
+            }
+
+            span:nth-child(3) {
+                font-size: 24px;
+                font-family: RobotoSlabBold;
+                -webkit-font-smoothing: antialiased;
+                margin-left: 10px;
+            }
+        }
+
+        form {
+            background: #f8f5f0;
+            border-left: 1px dashed @color-yellow;
+            border-right: 1px dashed @color-yellow;
+            border-bottom: 1px dashed @color-yellow;
+            text-align: center;
+            padding: 15px 0;
+
+            input, button {
+                width: 270px;
+                height: 35px;
+                box-sizing: border-box;
+            }
+
+            input {
+                font-size: 14px;
+                font-family: RobotoThin;
+                color: #646464;
+                background: @color-white;
+                border: 1px solid lighten(#646464, 50%);
+            }
+
+            button {
+                font-size: 16px;
+                font-family: RobotoLight;
+                color: @color-yellow;
+                text-transform: uppercase;
+                border: 1px solid @color-yellow;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .offer-cards {
+        width: @width-grid/1.6;
+        height: 370px;
+        display: inline-block;
+        vertical-align: bottom;
+        background: url(../img/bg-1.jpg);
+        position: relative;
+
+        .ribbon {
+            background: url(../img/ribbon.jpg);
+            width: 320px;
+            height: 48px;
+            padding: 0 5px;
+            display: table;
+            position: absolute;
+            top: 30px;
+            left: -10px;
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: -8px;
+                left: 3px;
+                width: 15px;
+                height: 15px;
+                background: #1b2112;
+                transform: rotate(45deg);
+                z-index: -1;
+            }
+
+            span {
+                font-size: 16px;
+                font-family: RobotoSlabBold;
+                color: @color-white;
+                text-transform: uppercase;
+                -webkit-font-smoothing: antialiased;
+                display: table-cell;
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
