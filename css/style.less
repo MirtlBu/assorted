@@ -235,36 +235,106 @@ header {
 
         background: @color-bluegray-light;
         padding: 5px 10px;
+        position: relative;
+
+        @width: 935px;
+        @item-img-width: 95px;
+        @item-margin: (@width - 9*@item-img-width)/10;
+        @item-width: @item-img-width + @item-margin;
 
         .slider {
-            display: table;
-            height: 95px;
+            position: relative;
+            width: @width;
+            margin: 0 auto;
         }
 
-        .arrows, .frame {
-            display: table-cell;
-            vertical-align: middle;
+        .frame-wrap {
+            overflow: hidden;
         }
 
         .frame {
-            text-align: center;
+            @shift: -@item-width;
+
+            width: 11*@item-width + 4px;
+            height: 95px;
+            display: inline-block;
+            position: relative;
+            transform: translateX(@shift);
+
+            &--shifted-next {
+                transform: translateX(@shift - @item-width);
+                transition: transform .5s ease;
+            }
+
+            &--shifted-prev {
+                transform: translateX(@shift + @item-width);
+                transition: transform .5s ease;
+            }
 
             span {
                 font-size: 11px;
                 font-family: RobotoBold;
-                color: #c1c9d0;
                 -webkit-font-smoothing: antialiased;
                 display: block;
             }
+
+            .slider__item {
+                width: @item-img-width;
+                margin-left: @item-margin;
+                display: inline-block;
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+            }
         }
 
-        .slide {
-            width: 95px;
-            display: inline-block;
+        .arrows {
+            width: 10px;
+            height: 17px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
 
-            &:not(:last-child) {
-                margin-right: 6px;
+            &:focus {
+                outline: none;
             }
+
+            &--next {
+                right: 10px;
+                background: url(../img/icon-arrow-next.png);
+            }
+
+            &--prev {
+                left: 10px;
+                background: url(../img/icon-arrow-prev.png);
+            }
+        }
+
+        .red {
+            color: #f49490;
+        }
+        .gray {
+            color: #c1c9d0;
+        }
+        .khaki {
+            color: #97aa9a;
+        }
+        .orange {
+            color: #f2bb98;
+        }
+        .green {
+            color: #92c69a;
+        }
+        .salad {
+            color: #c1cf78;
+        }
+        .brown {
+            color: #cecbc3;
+        }
+        .blue {
+            color: #c2c6e3;
         }
     }
 }
@@ -599,7 +669,7 @@ header {
         }
 
         li {
-            width: 130px;
+            width: 120px;
             display: inline-block;
             font-size: 14px;
             font-family: RobotoThin;
@@ -608,16 +678,7 @@ header {
             text-align: left;
             position: relative;
             cursor: pointer;
-
-            &:nth-child(1) {
-                text-align: right;
-            }
-            &:nth-child(2) {
-                text-align: center;
-            }
-            &:nth-child(3) {
-                text-align: left;
-            }
+            text-align: center;
 
             &.active {
                 font-family: RobotoBold;
