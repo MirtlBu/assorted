@@ -84,7 +84,7 @@ $(function() {
     renderSliderItems();
 
     $('.gallery').find('.nav').on('click', 'li', function() {
-        $('.gallery').find('.nav').find('li').removeClass('active');
+        $('.gallery').find('li').removeClass('active');
         $(this).addClass('active');
     });
 
@@ -97,5 +97,10 @@ $(function() {
             slide('next');
         }
     });
+
+    $('.ad').find('.nav').on('click', 'span', function() {
+        $('.ad').find('.nav').find('span').removeClass('active');
+        $(this).addClass('active');
+    })
 
 })
