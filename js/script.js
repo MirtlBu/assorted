@@ -13,7 +13,7 @@ var categories = [
 ];
 
 function renderGalleryItem() {
-    return $('<div/>', {'class': 'gallery__item'}).
+    return $('<a/>', {'class': 'gallery__item', 'href': 'product.html'}).
             append($('<img/>', {'src': 'img/goods-1.jpg'})).
             append($('<span/>').text('Сумка женская фиолетовая')).
             append($('<div/>').
