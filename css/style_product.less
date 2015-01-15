@@ -39,8 +39,12 @@
 
         li {
             height: 40px;
-            width: 220px;
-            margin: 0 auto;
+            width: 100%;
+            cursor: pointer;
+
+            &:hover {
+                background: darken(#fafafb, 5%);
+            }
 
             &:first-child {
                 background: @color-bluegray-medium;
@@ -53,7 +57,8 @@
                     text-transform: uppercase;
                     -webkit-font-smoothing: antialiased;
                     position: relative;
-                    top: 30%;
+                    top: 50%;
+                    transform: translateY(-50%);
                     left: 10px;
                 }
             }
@@ -62,14 +67,26 @@
                 font-size: 14px;
                 font-family: RobotoThin;
                 color: #b0b0b0;
+                width: 220px;
+                height: 100%;
+                display: block;
+                margin: 0 auto;
+                border-bottom: 1px solid rgba(176, 176, 176, 0.1);
+                cursor: pointer;
+            }
+
+            span {
+                display: inline-block;
                 position: relative;
-                top: 30%;
+                top: 50%;
+                transform: translateY(-50%);
             }
 
             .next {
                 float: right;
                 position: relative;
-                top: 0;
+                top: 50%;
+                transform: translateY(-50%);
             }
         }
 
@@ -149,6 +166,7 @@
                 border: 1px solid rgba(176, 176, 176, 0.3);
                 margin-right: 10px;
                 box-sizing: border-box;
+                color: @color-bluegray-medium;
             }
 
             .rub {
