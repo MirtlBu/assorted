@@ -70,6 +70,7 @@ a {
 .grid {
     width: @width-grid;
     margin: auto;
+    position: relative;
 }
 
 .logo {
@@ -633,14 +634,28 @@ header {
 
     .offer-cards-wrap {
         display: inline-block;
+        vertical-align: bottom;
+        overflow: hidden;
+        height: 383px;
+        width: 610px;
+    }
+
+    .offer-cards-frame {
+        width: 2470px;
+        transition: transform .7s ease;
+    }
+
+    .offer-shifted {
+        transform: translateX(-@width-grid/1.6);
     }
 
     .offer-cards {
-        width: @width-grid/1.7;
+        width: 606px;
         height: 383px;
-        vertical-align: bottom;
+        margin-left: 7px;
         background: url(../img/bg-1.jpg);
         position: relative;
+        display: inline-block;
 
         .ribbon {
             background: url(../img/ribbon.jpg);
@@ -844,12 +859,13 @@ header {
                 }
             }
         }
+    }
 
-        .nav {
+    .nav {
             position: absolute;
             bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 65%;
+            // transform: translateX(-50%);
 
             span {
                 display: inline-block;
@@ -868,7 +884,6 @@ header {
                 }
             }
         }
-    }
 }
 
 .gallery {

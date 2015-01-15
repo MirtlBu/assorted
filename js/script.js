@@ -79,6 +79,8 @@ function slide(direction) {
 
 $(function() {
 
+    var counter = 0;
+
     renderGalleryItems();
 
     renderSliderItems();
@@ -101,6 +103,15 @@ $(function() {
     $('.ad').find('.nav').on('click', 'span', function() {
         $('.ad').find('.nav').find('span').removeClass('active');
         $(this).addClass('active');
-    })
+
+        counter++;
+        if (counter > 3) {
+            counter = 0;
+            $('.offer-cards-frame').css({'transform': 'translateX(0)'});
+        }
+        else {
+            $('.offer-cards-frame').css({'transform': 'translateX(' + -616*counter + 'px)'});
+        }
+    });
 
 })
