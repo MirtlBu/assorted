@@ -40,6 +40,10 @@ button, input {
     background: transparent;
 }
 
+input {
+    padding-left: 5px;
+}
+
 button {
     cursor: pointer;
     transition: background .1s linear, color .1s linear, border .1s linear;
@@ -66,10 +70,12 @@ a {
 .grid {
     width: @width-grid;
     margin: auto;
+    position: relative;
 }
 
 .logo {
     width: @width-grid/5.4;
+    display: block;
     text-align: right;
 
     span:first-child {
@@ -115,6 +121,8 @@ header {
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+        //костыль для FF
+        -moz-transform: translateY(0);
     }
 
     .city {
@@ -242,7 +250,7 @@ header {
                         display: block;
                     }
 
-                    span {
+                    .title {
                         color: #7b8690;
                         border-bottom: 1px dotted #7b8690;
                     }
@@ -300,9 +308,21 @@ header {
                 text-align: right;
                 padding-right: 8px;
 
+                input {
+                    display: none;
+                    float: left;
+                    padding-left: 20px;
+                    width: 110px;
+                    height: 20px;
+                    color: @color-bluegray-medium;
+                }
+
                 &:hover {
                     width: 160px;
 
+                    input {
+                        display: inline-block;
+                    }
                 }
             }
         }
@@ -321,29 +341,39 @@ header {
 
             li {
                 height: 40px;
-                width: 250px;
-                margin: 0 auto;
+                width: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    background: darken(#fafafb, 5%);
+                }
 
                 a {
                     font-size: 14px;
                     font-family: RobotoThin;
                     color: #b0b0b0;
-                    position: relative;
-                    top: 30%;
-                    // transform: translateY(-50%);
+                    width: 250px;
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    border-bottom: 1px solid rgba(176, 176, 176, 0.1);
+                    cursor: pointer;
+                }
 
+                span {
+                    display: inline-block;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
                 }
 
                 .next {
                     float: right;
                     position: relative;
-                    top: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
                 }
 
-            }
-
-            li:not(:last-child) {
-                border-bottom: 1px solid rgba(176, 176, 176, 0.1);
             }
 
             li:last-child {
@@ -354,8 +384,14 @@ header {
                 }
 
                 img {
-                    vertical-align: middle;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
                     margin-right: 5px;
+                }
+
+                span {
+                    transform: translateY(-63%);
                 }
             }
         }
@@ -596,13 +632,30 @@ header {
         }
     }
 
-    .offer-cards {
-        width: @width-grid/1.6;
-        height: 383px;
+    .offer-cards-wrap {
         display: inline-block;
         vertical-align: bottom;
+        overflow: hidden;
+        height: 383px;
+        width: 610px;
+    }
+
+    .offer-cards-frame {
+        width: 2470px;
+        transition: transform .7s ease;
+    }
+
+    .offer-shifted {
+        transform: translateX(-@width-grid/1.6);
+    }
+
+    .offer-cards {
+        width: 606px;
+        height: 383px;
+        margin-left: 7px;
         background: url(../img/bg-1.jpg);
         position: relative;
+        display: inline-block;
 
         .ribbon {
             background: url(../img/ribbon.jpg);
@@ -806,12 +859,13 @@ header {
                 }
             }
         }
+    }
 
-        .nav {
+    .nav {
             position: absolute;
             bottom: -30px;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 65%;
+            // transform: translateX(-50%);
 
             span {
                 display: inline-block;
@@ -830,7 +884,6 @@ header {
                 }
             }
         }
-    }
 }
 
 .gallery {
@@ -1021,6 +1074,12 @@ header {
             font-size: 11px;
             font-family: RobotoThin;
             color: #9e9992;
+
+            img {
+                position: relative;
+                top: 15px;
+                left: -20px;
+            }
         }
 
         .social {
@@ -1062,6 +1121,7 @@ header {
             border-radius: 20px;
             border: 1px solid lighten(@color-bluegray-medium, 15%);
             padding-left: 10px;
+            color: #9e9992;
         }
     }
 
@@ -1087,6 +1147,9 @@ header {
         }
     }
 }
+
+@import 'style_product.less';
+
 
 
 

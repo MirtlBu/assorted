@@ -10,10 +10,10 @@
 
     <header>
         <div class="grid">
-            <div class="logo logo--dark">
+            <a href="index.html" class="logo logo--dark">
                 <span>Your market</span>
                 <span>онлайн торговый центр</span>
-            </div>
+            </a>
             <div class="city">
                 <span></span>
                 <span>Москва</span>
@@ -34,23 +34,49 @@
         </div>
     </header>
 
+    <?php include"product.php"; ?>
+
     <div class="navigation">
         <div class="grid">
             <div class="nav">
                 <ul>
                     <li>
                         <img src="img/icon-more.png">
-                        <span>Все категории</span>
+                        <span class="title">Все категории</span>
                         <ul class="menu">
-                            <li><a href="#">Бытовая техника <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Детские товары <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Всё для дома <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Одежда, обувь <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Спортивные товары <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Электроника <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Всё для авто <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#">Всё для сада <img class="next" src="img/icon-next.png"></a></li>
-                            <li><a href="#"><img src="img/percent.png">Скидки и акции</a></li>
+                            <li><a href="#">
+                                <span>Бытовая техника</span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Детские товары </span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Всё для дома </span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Одежда, обувь</span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Спортивные товары</span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Электроника</span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Всё для авто</span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#">
+                                <span>Всё для сада</span>
+                                <img class="next" src="img/icon-next.png">
+                            </a></li>
+                            <li><a href="#"><img src="img/percent.png"><span>Скидки и акции</span></a></li>
                         </ul>
                     </li>
                     <li>
@@ -61,6 +87,7 @@
                     </li>
                     <li>
                         <img src="img/icon-search.png">
+                        <input>
                     </li>
                 </ul>
             </div>
@@ -104,37 +131,119 @@
                     </form>
                 </div>
             </div>
-            <div class="offer-cards">
-                <div class="ribbon">
-                    <span><img src="img/snowflake.png"></span>
-                    <span>Новогодняя распродажа</span>
-                    <span><img src="img/snowflake.png"></span>
-                </div>
-                <div class="description">
-                    <span>Новогодний светильник «Звёздочка»</span>
-                    <span>Оригинальный подарок и украшение на Новый Год, Рождество и для любых других праздников.</span>
-                    <button type="button">Подробнее</button>
-                    <div class="available">
-                        <span>В наличии осталось:</span>
-                        <div class="counter">
-                            <div class="counter__item counter__item--null">0</div>
-                            <div class="counter__item counter__item--null">0</div>
-                            <div class="counter__item">1</div>
-                            <div class="counter__item">3</div>
-                            <div class="counter__item">2</div>
-                            <span>единиц товара</span>
+            <div class="offer-cards-wrap">
+                <div class="offer-cards-frame">
+                    <div class="offer-cards">
+                        <div class="ribbon">
+                            <span><img src="img/snowflake.png"></span>
+                            <span>Новогодняя распродажа</span>
+                            <span><img src="img/snowflake.png"></span>
                         </div>
-                        <span><img src="img/icon-heart.png"></span>
-                        <span><img src="img/icon-star-1.png"></span>
-                        <button type="button">В корзину</button>
+                        <div class="description">
+                            <span>Новогодний светильник «Звёздочка»</span>
+                            <span>Оригинальный подарок и украшение на Новый Год, Рождество и для любых других праздников.</span>
+                            <button type="button">Подробнее</button>
+                            <div class="available">
+                                <span>В наличии осталось:</span>
+                                <div class="counter">
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item">1</div>
+                                    <div class="counter__item">3</div>
+                                    <div class="counter__item">2</div>
+                                    <span>единиц товара</span>
+                                </div>
+                                <span><img src="img/icon-heart.png"></span>
+                                <span><img src="img/icon-star-1.png"></span>
+                                <button type="button">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-cards">
+                        <div class="ribbon">
+                            <span><img src="img/snowflake.png"></span>
+                            <span>Новогодняя распродажа</span>
+                            <span><img src="img/snowflake.png"></span>
+                        </div>
+                        <div class="description">
+                            <span>Новогодний светильник «Звёздочка»</span>
+                            <span>Оригинальный подарок и украшение на Новый Год, Рождество и для любых других праздников.</span>
+                            <button type="button">Подробнее</button>
+                            <div class="available">
+                                <span>В наличии осталось:</span>
+                                <div class="counter">
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item">1</div>
+                                    <div class="counter__item">3</div>
+                                    <div class="counter__item">2</div>
+                                    <span>единиц товара</span>
+                                </div>
+                                <span><img src="img/icon-heart.png"></span>
+                                <span><img src="img/icon-star-1.png"></span>
+                                <button type="button">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-cards">
+                        <div class="ribbon">
+                            <span><img src="img/snowflake.png"></span>
+                            <span>Новогодняя распродажа</span>
+                            <span><img src="img/snowflake.png"></span>
+                        </div>
+                        <div class="description">
+                            <span>Новогодний светильник «Звёздочка»</span>
+                            <span>Оригинальный подарок и украшение на Новый Год, Рождество и для любых других праздников.</span>
+                            <button type="button">Подробнее</button>
+                            <div class="available">
+                                <span>В наличии осталось:</span>
+                                <div class="counter">
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item">1</div>
+                                    <div class="counter__item">3</div>
+                                    <div class="counter__item">2</div>
+                                    <span>единиц товара</span>
+                                </div>
+                                <span><img src="img/icon-heart.png"></span>
+                                <span><img src="img/icon-star-1.png"></span>
+                                <button type="button">В корзину</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offer-cards">
+                        <div class="ribbon">
+                            <span><img src="img/snowflake.png"></span>
+                            <span>Новогодняя распродажа</span>
+                            <span><img src="img/snowflake.png"></span>
+                        </div>
+                        <div class="description">
+                            <span>Новогодний светильник «Звёздочка»</span>
+                            <span>Оригинальный подарок и украшение на Новый Год, Рождество и для любых других праздников.</span>
+                            <button type="button">Подробнее</button>
+                            <div class="available">
+                                <span>В наличии осталось:</span>
+                                <div class="counter">
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item counter__item--null">0</div>
+                                    <div class="counter__item">1</div>
+                                    <div class="counter__item">3</div>
+                                    <div class="counter__item">2</div>
+                                    <span>единиц товара</span>
+                                </div>
+                                <span><img src="img/icon-heart.png"></span>
+                                <span><img src="img/icon-star-1.png"></span>
+                                <button type="button">В корзину</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="nav">
-                    <span class="active"></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            </div>
+            <div class="nav">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </div>
@@ -175,6 +284,7 @@
                     <span class="title">Будь в курсе</span>
                     <form>
                         <input type="input" placeholder="Ваш e-mail">
+                        <img src="img/icon-telegram.png">
                         <button type="submit"></button>
                     </form>
                     <span>*Компания обязуется не использовать</br> ваш почтовый ящик для рассылки спама</span>
@@ -194,10 +304,10 @@
                 </div>
             </div>
             <div class="info">
-                <div class="logo logo--light">
+                <a href="index.html" class="logo logo--light">
                     <span>Your market</span>
                     <span>онлайн торговый центр</span>
-                </div>
+                </a>
                 <div class="copyrights">©YourMarket 2014-2015</div>
             </div>
         </div>
